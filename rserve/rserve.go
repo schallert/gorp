@@ -1,3 +1,4 @@
+// Package rserve provides communcation with a local rserve daemon.
 package rserve
 
 import (

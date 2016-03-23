@@ -1,7 +1,4 @@
-// Package gorp provdes a server that accepts datapoints as JSON and sends
-// them to a local rserve daemon, which then processes them with Twitter's
-// AnomalyDetection R package and returns the resulting PNG plot and list of
-// anomalies to the client.
+// Package gorp provides an HTTP interface for processing timeseries anomalies.
 package gorp
 
 import (
@@ -15,8 +12,10 @@ import (
 	"github.com/schallert/gorp/rserve"
 )
 
-// A Server defines a gorp server that accepts HTTP requests and communicates
-// with the rserve client.
+// A Server defines a server that accepts datapoints as JSON and sends
+// them to a local rserve daemon, which then processes them with Twitter's
+// AnomalyDetection R package and returns the resulting PNG plot and list of
+// anomalies to the client.
 type Server struct {
 	hsrv   *http.Server
 	client rserve.Client
